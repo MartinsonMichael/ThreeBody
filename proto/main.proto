@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+
+service ThreeBody {
+    rpc start(google.protobuf.Empty) returns (SystemState) {}
+    rpc get_state(google.protobuf.Empty) returns (SystemState) {}
+}
+
+message InitConfig {
+    repeated string names = 1;
+}
+
+message SystemState {
+    repeated string names = 1;
+}
